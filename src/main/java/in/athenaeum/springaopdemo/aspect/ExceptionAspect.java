@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 @EnableAspectJAutoProxy
 @Component
 public class ExceptionAspect {
-    private Logger logger = Logger.getLogger(LoggingAspect.class.getName());
+    private Logger logger = Logger.getLogger(ExceptionAspect.class.getName());
 
     //  for any method, execution(* *(..))
     @AfterThrowing(
