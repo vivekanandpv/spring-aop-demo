@@ -16,7 +16,8 @@ import java.util.logging.Logger;
 public class LoggingAspect {    //  Cross-cutting concern
     private Logger logger = Logger.getLogger(LoggingAspect.class.getName());
 
-    @Around("execution(* in.athenaeum.springaopdemo.controller.SampleController.greeter(..))")
+    //  Advice only applied to the methods that have @AppLog
+    @Around("@annotation(in.athenaeum.springaopdemo.aspect.AppLog)")
     public Object logAround(ProceedingJoinPoint joinPoint) throws Throwable {
         //  get the arguments
         Object[] args = joinPoint.getArgs();
